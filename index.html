@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT card</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="card">
+            <article aria-label="NFT card: Equilibrium #3429">
+                <div class="card__img-wrapper card__img-wrapper--active" tabindex="0" aria-describedby="nft-description">
+                    <img
+                     class="card__img card__img--active"
+                      src="./images/image-equilibrium.jpg"
+                       alt="Artwork titled Equilibrium #3429">
+                    <img 
+                    class="card__icon card__icon--active" 
+                    src="./images/icon-view.svg" 
+                     alt="View details icon"  
+                     aria-hidden="true">
+                    <span class="sr-only">View details of Equilibrium #3429</span>
+                    <div class="card__img-overlay"></div> 
+                </div>
+                <h1 class="card__title card__title--hover " tabindex="0">Equilibrium #3429</h1>
+                <p class="card__text" id="nft-description">Our Equilibrium collection promotes balance and calm.</p>
+                <div class="info">
+                    <div class="price" aria-label="Price: 0.041 Ethereum">
+                        <img class="price__img" src="./images/icon-ethereum.svg" alt="Ethereum logo">
+                        <p class="price__text">0.041 ETH</p>
+                    </div>
+                    <div class="time"  aria-label="Time left: 3 days">
+                        <img class="time__img" src="./images/icon-clock.svg" alt="Clock">
+                        <p class="time__text">3 days left</p>
+                    </div>
+                    </div>
+                    <hr>
+                    <div class="creator" aria-label="Creator information">
+                        <img class="creator__img" src="./images/image-avatar.png" alt="Avatar">
+                        <p class="creator__text">Creation of <span class="creator__name creator__name--hover" tabindex="0"aria-label="Creator profile: Jules Wyvern">Jules Wyvern</span></p>
+            </div>
+        </article>
+    </div>
+</main>
+</body>
+</html>

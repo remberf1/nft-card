@@ -1,0 +1,208 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+$font-stack: 'Outfit', sans-serif;
+$font-size: 18px;
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 600;
+
+
+// === Colors ===
+
+// Primary
+$blue-500: hsl(215, 51%, 70%);
+$cyan-400: hsl(178, 100%, 50%);
+
+// Neutral
+$blue-950: hsl(217, 54%, 11%); // main background
+$blue-900: hsl(216, 50%, 16%); // card background
+$blue-800: hsl(215, 32%, 27%); // line or border
+$white:    hsl(0, 0%, 100%);
+
+body{
+  background-color: $blue-950;
+  font-family: $font-stack;
+  font-size: $font-size;
+  min-height: 100vh;
+  margin: 0;
+}
+main{
+    padding: 1.5rem;
+    margin:0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.card{
+  background-color: $blue-900;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; // ensures overlay & img corners match
+
+  .card__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .card__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &--active:active .card__img-overlay {
+    background-color: $cyan-400;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+
+.card__icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__img-wrapper--active:active .card__icon {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__title{
+    color: $white;
+    font-weight: $font-bold;
+
+    &--hover:hover{
+        color: $cyan-400;
+        cursor: pointer;
+    }
+}
+.card__text{
+    color: $blue-500;
+    font-weight: $font-light;
+    min-width: 24ch;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+    
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+    
+}
+.price{
+    display: flex;
+    align-items: center;
+    color: $cyan-400;
+    font-weight: $font-bold;
+}
+.price__text{
+    padding: 0;
+    margin: 0;
+}
+.price__img{
+margin-right: 0.5em;
+scale: 1.3;
+}
+.time{
+    display: flex;
+    align-items: center;
+    color: $blue-500;
+    font-weight: $font-light;
+}
+.time__img{
+    scale: 1.3;
+    margin-right: 0.5em;
+}
+.time__text{
+    padding: 0;
+    margin: 0;
+}
+hr{
+    border: none;
+    border-top: 1px solid $blue-800;
+}
+.creator{
+    display: flex;
+    align-items: center;
+    color: $blue-500;
+    font-weight: $font-light;
+}
+.creator__img{
+    margin-right: 0.5em;
+    border: 1px solid $white;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em
+}
+
+.creator__name{
+    color: $white;
+    font-weight: $font-bold;
+
+    &--hover:hover{
+        color: $cyan-400;
+        cursor: pointer;
+    }
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0); 
+  white-space: nowrap; /* prevent line breaks */
+  border: 0;
+}
+@media screen and (min-width: 768px) {
+    html, body {
+    height: auto;
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; // optional: adds breathing room on small-height screens
+    overflow-y: auto;
+  }
+
+  main {
+    padding: 0;
+  }
+}
